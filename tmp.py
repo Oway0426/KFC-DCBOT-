@@ -1,5 +1,5 @@
-"""感謝作者https://winedays.github.io/KCouper/
-提供API
+"""\感謝作者https://winedays.github.io/KCouper/
+提供參考
 """
 # -*- coding: utf-8 -*-
 from datetime import datetime, timedelta, timezone
