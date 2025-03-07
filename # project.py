@@ -12,7 +12,7 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 import config
 import tmp
 import json
-import coupon_recommender 
+import coupon_recommende 
 import single
 import spacy
 import difflib
@@ -354,7 +354,7 @@ class PackageConfirmButton(discord.ui.Button):#累積選擇後確認
             await interaction.response.send_message("您尚未選擇任何品項。", ephemeral=True)
             return
 
-        recommended_packages = coupon_recommender.get_recommended_packages(packages)
+        recommended_packages = coupon_recommende.coupon_recommender(packages)
         if not recommended_packages:
             await interaction.response.send_message("找不到推薦套餐。", ephemeral=True)
             return
@@ -652,7 +652,7 @@ async def ner(ctx, *, text: str):
     doc = nlp(text)
     order_dict = extract_order_dict(doc, flat_menu)
     print(order_dict)
-    recommended_packages = coupon_recommender.get_recommended_packages(order_dict)
+    recommended_packages = coupon_recommende.coupon_recommender(order_dict)
     print(recommended_packages)
     formatted_text = format_packages(recommended_packages)
     await ctx.send(f"{formatted_text}")
